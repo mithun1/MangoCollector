@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<style>
+#styleProgress {
+  width: 40%;
+  background-color: #ddd;
+  margin-left:30%;
+  display: none;
+  margin-top: 60px;
+}
+
+#styleBar {
+  width: 1%;
+  height: 30px;
+  background-color: #4CAF50;
+}
+@font-face {
+  font-family: 'FFF_Tusj';
+  src: url('FFF_Tusj.ttf'); /* IE9 Compat Modes */
+  src: url('FFF_Tusj.ttf') format('embedded-opentype'), /* IE6-IE8 */
+       url('FFF_Tusj.ttf') format('ttf'), /* Modern Browsers */
+       url('FFF_Tusj.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+#bt1
+{
+color: white;
+background-color: green;
+height: 80px;
+width: 160px;
+font-size: 24px;
+margin-left: 45%;
+font-family: FFF_Tusj;
+font-weight: bold;
+text-decoration: none;
+margin-top: 60px;
+}
+#bt2
+{
+color: white;
+background-color: green;
+height: 80px;
+width: 160px;
+font-size: 24px;
+margin-left: 45%;
+font-family: FFF_Tusj;
+font-weight: bold;
+text-decoration: none;
+text-align: center;
+margin-top: 60px;
+}
+a
+{
+text-decoration: none;
+color: white;
+}
+</style>
+<body>
+
+<div id="styleProgress">
+  <div id="styleBar"></div>
+</div>
+
+<br>
+<button id="bt1" onclick="move()">START GAME</button>
+<button id="bt2" ><a href="howtouse.html">HOW TO PLAY</button>
+
+
+<script>
+function move() {
+var disp = document.getElementById("styleProgress");
+disp.style.display = 'block';
+var btdis = document.getElementById("bt1");
+btdis.style.display = 'none';
+  var elem = document.getElementById("styleBar");   
+  var width = .5;
+  var id = setInterval(frame, 260);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+	  window.location = "animuppercentfinal1.html";
+	  
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }
+}
+</script>
+
+</body>
+</html>
