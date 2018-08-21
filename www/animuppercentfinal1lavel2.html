@@ -1,0 +1,174 @@
+<html>
+<head>
+<title>game</title>
+<meta name="viewport" content="width=device-width">
+<style type="text/css">
+#bitmap
+{
+height: 100%;
+width: 100%;
+border: 1px solid red;
+}
+#control
+{
+position: absolute;
+height: 260px;
+width: 160px;
+font-size: 16px;
+}
+#countdown1
+{
+font-size: 0px;
+}
+#nextlabel
+{
+position: absolute;
+height: 300px;
+width: 80%;
+margin-top: -320px;
+margin-left: 10%;
+background-color: rgb(24, 244, 76, 0);
+color: red;
+z-index: 1;
+display: none;
+}
+#next
+{
+background-color: green;
+width: 160px;
+height: 160px;
+margin-left: 20%;
+color: red;
+font-family: Arial;
+font-size: 66px;
+opacity: 2;
+}
+#tryagain
+{
+position: absolute;
+height: 300px;
+width: 80%;
+margin-top: -180px;
+margin-left: 15%;
+background-color: rgb(24, 244, 76, 0);
+color: red;
+z-index: 1;
+display: none;
+}
+</style>
+<style type="text/css">
+#t1{
+color: green;
+font-size: 34px;
+margin-top: -65px;
+margin-left: 40px;
+}
+#t2{
+color: green;
+font-size: 34px;
+margin-top: 1px;
+margin-left: 35px;
+}
+#t3{
+color: green;
+font-size: 34px;
+margin-top: -65px;
+margin-left: 70px;
+}
+#t4{
+color: green;
+font-size: 34px;
+margin-top: -45px;
+}
+#t5{
+color: green;
+font-size: 34px;
+margin-top: -40px;
+margin-left: 35px;
+}
+#dcont
+{
+border: 2px solid green;
+width: 100px;
+height: 100px;
+border-top-left-radius: 3em;
+border-top-right-radius: 3em;
+border-bottom-left-radius: 3em;
+border-bottom-right-radius: 3em;
+}
+#allcont
+{
+position: absolute;
+margin-top: -180px;
+margin-left: 60%;
+}
+#ang, #angle
+{
+margin-top: 20px;
+display: inline;
+color: green;
+}
+#spd, #speed
+{
+display: inline;
+color: green;
+}
+#contall
+{
+margin-top: -5px;
+margin-left: 8px;
+font-size: 46px;
+color: green;
+}
+#tsp
+{
+margin-top: 40px;
+display: inline;
+color: green;
+}
+#contcircle
+{
+position: absolute;
+border: 2px solid green;
+width: 40px;
+height: 40px;
+margin-left: 62%;
+margin-top: -240px;
+border-top-left-radius: 3em;
+border-top-right-radius: 3em;
+border-bottom-left-radius: 3em;
+border-bottom-right-radius: 3em;
+}
+</style>
+<script>
+</script>
+</head>
+<body>
+<div id="control">
+<span id="countdown1"></span>
+<span id="demo1"></span>
+</div>
+
+<canvas align="center" id="bitmap" width="650" height="450"></canvas>
+<img id="scream" src="tree1.png" alt="The Scream" height="0" width="0">
+<script>
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('d A=0;d T=0;d E=0;d q=0;d Z=0;d Y=0;d W=2j;d o=0;d 17=0;d s=0;d M=0;d Q=0;d S=0;d G=0;d I=0;d N=0;d j=0;d t=2x;d J=e.f(\'2w\');d P=J.2z(\'2d\');P.13="1f(U,U,U)";P.1H(0,0,l,23);J.2y("2v",r(H,J){d 1t=1g(H,P.J)});d X=.2s;d 8=0;d a=10;d c=1;d V=0;r 28(a){d 2r=c*10;d b=P;b.1z();b.1I();2b(0);9(V==1){9(17==0){E=E+(3*A)/(1A-T);q=q+3}g{E=E+(3*A)/(1A-T);q=q-3}}1r=Y;1o=Z;P.13="1f(U,U,U)";P.1H(0,0,l,2t);d 1G=e.f("2G");P.2I(1G,0,0);u(15,1l);u(30,2E);u(1q,2);u(2B,29);u(1s,11);u(2A,2D);u(2C,K);u(2q,20);u(2f,21);b.1K();b.1I();b.1K();9(V==0){b.13="1f(2h,20,K)";b.1D(1r,1C+1o,3,0,1a.1F*2,1E);b.1J(0,l);b.1J(1r-3,1C+1o);b.1y()}b.1L();9(V==1){b.1z();b.13="1f(1B,1B,K)";b.1D(E,l-q,6,0,1a.1F*2,1E);b.1y();b.1L()}b.1z();9(s==1){9(30+8<l){8=8+20;b.n(R,30+8);b.m(1S,7+8,1R,1h+8,R,30+8)}g{8=0;s=3}}g 9(s==0){b.n(R,30);b.m(1S,7,1R,1h,R,30)}9(M==1){9(O+8<l){8=8+20;b.n(26,O+8);b.m(11,22+8,16,1s+8,26,O+8)}g{8=0;M=3}}g 9(M==0){b.n(26,O);b.m(11,22,16,1s,26,O)}9(Q==1){9(12+8<l){8=8+20;b.n(1j,12+8);b.m(1l,25+8,O,1T+8,1j,12+8)}g{8=0;Q=3}}g 9(Q==0){b.n(1j,12);b.m(1l,25,O,1T,1j,12)}9(S==1){9(21+8<l){8=8+20;b.n(1k,21+8);b.m(1V,-2+8,1U,1q+8,1k,21+8)}g{8=0;S=3}}g 9(S==0){b.n(1k,21);b.m(1V,-2,1U,1q,1k,21)}9(G==1){9(30+8<l){8=8+20;b.n(1m,30+8);b.m(1N,7+8,1M,1h+8,1m,30+8)}g{8=0;G=3}}g 9(G==0){b.n(1m,30);b.m(1N,7,1M,1h,1m,30)}9(I==1){9(18+8<l){8=8+20;b.n(1e,18+8);b.m(1O,-5+8,1Q,K+8,1e,18+8)}g{8=0;I=3}}g 9(I==0){b.n(1e,18);b.m(1O,-5,1Q,K,1e,18)}9(N==1){9(1c+8<l){8=8+20;b.n(1i,21+8);b.m(1P,-5+8,2X,K+8,1i.5,21+8)}g{8=0;N=3}}g 9(N==0){b.n(1i,1c);b.m(1P,-1,2V,2Z,2T,1c)}9(17==0){9(s==3){j=j+1;s=4}9(M==3){j=j+1;M=4}9(Q==3){j=j+1;Q=4}9(S==3){j=j+1;S=4}9(G==3){j=j+1;G=4}9(I==3){j=j+1;I=4}9(N==3){j=j+1;N=4}e.f("2Q").v=j;9(j>5){e.f("2R").C.1b=\'1n\'}}b.13="#2S";b.1y();b.2O=-1;b.2W=\'2U(0,0,U,0)\';X=.2K;1p();e.f("L").v=t}r u(1x,1w){d i=E;d p=l-q;9(i>=1x&&p>=1w&&p-3<1w&&i<1x+3){d 1t=1g(H,J);}9(i>=R.25&&p>=30&&p-3<30&&i<R.3&&s!==4){s=1;d h=z w(\'F.B\');h.D();}9(i>R.25&&i<R.3&&p==30&&s!==4){s=1;d h=z w(\'F.B\');h.D();}9(i>25.2N&&i<25.36&&p==O&&M!==4){M=1;d h=z w(\'F.B\');h.D();}9(i>1W.1l&&i<1W.32&&p==31&&Q!==4){Q=1;d h=z w(\'F.B\');h.D();}9(i>2a.38&&i<2a.12&&p==21&&S!==4){S=1;d h=z w(\'F.B\');h.D();}9(i>1X&&i<1X.1&&p==30&&G!==4){G=1;d h=z w(\'F.B\');h.D();}9(i==2P.2J&&p==18&&I!==4){I=1;d h=z w(\'F.B\');h.D();}9(i==1i.5&&p==1c&&N!==4){N=1;d h=z w(\'F.B\');h.D();}}r 2b(k){9(k==1){A=A+3;T=T+3;Z=Z+3;Y=Y+3;e.f("24").v=A}9(k==2){T=T-3;A=A-3;Z=Z-3;Y=Y-3;e.f("24").v=A}9(1>(t-o)){e.f("L").C.14="1d"}}r 2L(){9(1>(t-o)){V=0;e.f("2M").C.1b=\'1n\';e.f("L").C.14="1d"}g{V=1;e.f("1Y").C.1b=\'35\'}d h=z w(\'39.B\');h.D();t=t-o;e.f("L").v=t}r 1v(){W=W-10;o=o+10;9(1>(t-o)){e.f("L").C.14="1d"}e.f("1v").v=o}r 37(){W=W+10;o=o-10;9(1>(t-o)){e.f("L").C.14="1d"}g{e.f("L").C.14="34"}e.f("1v").v=o}r 1g(H,2e){d 1u=2e.33();2Y{x:1a.2c(H.2k-1u.2l),y:1a.2c(H.2i-1u.2o)}}r 2p(H,J){d 1t=1g(H,J);}r 1p(){d 1Z=1a.2m((X-30)/K);d 19=X%K;9(19<10){19="0"+19}e.f(\'2n\').v=1Z+":"+19;9(X<=0){a=a+10;c=c+1;9(c>2){c=1}9(a>2g){a=10}9((l-q)<W){17=1}9((l-q)>l||E>23||q>l){17=0;E=0;q=0;V=0;e.f("1Y").C.1b=\'1n\'}28(a)}g{X--}}d 2H=2F(\'1p()\',2u);r 27(){e.f("L").v=t}27();',62,196,'||||||||am|if||ctx||var|document|getElementById|else|audio|len|countall||450|bezierCurveTo|moveTo|sp|br|ay1|function|ef1|tspeed|meetpoint|innerHTML|Audio|||new|ax|mp3|style|play|ax1|sound|ef5|event|ef6|canvas|60|totalspeed|ef2|ef7|45|context|ef3|236|ef4|ay|255|startanim|lt|seconds1|axv1|ayv1|||48|fillStyle|color|||startdown||remainingSeconds|Math|display|69|red|399|rgb|relativePos|72|571|55|136|40|494|block|ayv|secondPassed1|63|axv|87|pos|rect|speed|pointy|pointx|fill|beginPath|50|120|400|arc|false|PI|img|fillRect|save|lineTo|restore|stroke|484|479|384|556|389|226|221|90|126|121|54|493|allcont|minutes||||600|angle|||soundfun|anim||135|diraction|floor||element|94|160|242|clientY|430|clientX|left|round|countdown1|top|point|405|x1|001|650|100|click|bitmap|2700|addEventListener|getContext|210|189|280|70|52|setInterval|scream|countdownTimer1|drawImage|7692307692312|01|animstart|tryagain|85|lineWidth|398|contall|nextlabel|FFD400|568|rgba|551|strokeStyle|561|return|64||51|41|getBoundingClientRect|green|none|86|speedminus|47|s2'.split('|'),0,{}));
+ </script>
+ <div id="nextlabel"><div id="next">You Win.<a href="treeimagethree.html">NEXT</a></div></div>
+ <div id="tryagain"><div id="next">You Lose.<a href="animuppercentfinal1lavel2.html">Try Again</a></div></div>
+   <div id="contcircle">
+  <p id="contall"></p>
+  </div>
+  <p id="sound"></p>
+  <div id="allcont">
+  <p id="tsp">Tolta Speed:</p><span id="totalspeed"></span>
+<p id="ang">Angle :</p><span id="angle"></span>
+  <p id="spd">Speed :</p><span id="speed"></span>
+  <div id="dcont">
+<p id="t2" onclick="speed()" >&#9650;</p>
+<h1 id="t4" onclick="diraction(2)">&#9668;</h1><h1 id="t1" onclick="animstart()">&#9632;</h1><h1 id="t3" onclick="diraction(1)">&#9654;</h1>
+<p id="t5" onclick="speedminus()">&#9660;</p>
+</div>
+</div>
+  </body>
+  </html>
