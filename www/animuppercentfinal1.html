@@ -1,0 +1,716 @@
+<html>
+<head>
+<title>game</title>
+<meta name="viewport" content="width=device-width">
+<style type="text/css">
+#bitmap
+{
+height: 100%;
+width: 100%;
+border: 1px solid red;
+}
+#control
+{
+position: absolute;
+height: 260px;
+width: 160px;
+font-size: 16px;
+}
+#countdown1
+{
+font-size: 0px;
+}
+#nextlabel
+{
+position: absolute;
+height: 300px;
+width: 80%;
+margin-top: -320px;
+margin-left: 15%;
+background-color: rgb(24, 244, 76, 0);
+color: red;
+z-index: 1;
+display: none;
+}
+#tryagain
+{
+position: absolute;
+height: 300px;
+width: 80%;
+margin-top: -180px;
+margin-left: 15%;
+background-color: rgb(24, 244, 76, 0);
+color: red;
+z-index: 1;
+display: none;
+}
+#soundcont
+{
+position: absolute;
+height: 300px;
+width: 80%;
+margin-top: -220px;
+margin-left: 0%;
+background-color: rgb(24, 244, 76, 0);
+color: red;
+z-index: 1;
+display: none;
+}
+#next
+{
+background-color: green;
+width: 260px;
+height: 160px;
+margin-left: 20%;
+color: red;
+font-family: Arial;
+font-size: 26px;
+opacity: 2;
+}
+</style>
+<style type="text/css">
+#t1{
+color: green;
+font-size: 34px;
+margin-top: -65px;
+margin-left: 40px;
+}
+#t2{
+color: green;
+font-size: 34px;
+margin-top: 1px;
+margin-left: 35px;
+}
+#t3{
+color: green;
+font-size: 34px;
+margin-top: -65px;
+margin-left: 70px;
+}
+#t4{
+color: green;
+font-size: 34px;
+margin-top: -45px;
+}
+#t5{
+color: green;
+font-size: 34px;
+margin-top: -40px;
+margin-left: 35px;
+}
+#dcont
+{
+border: 2px solid green;
+width: 100px;
+height: 100px;
+border-top-left-radius: 3em;
+border-top-right-radius: 3em;
+border-bottom-left-radius: 3em;
+border-bottom-right-radius: 3em;
+}
+#allcont
+{
+position: absolute;
+margin-top: -180px;
+margin-left: 60%;
+}
+#ang, #angle
+{
+margin-top: 20px;
+display: inline;
+color: green;
+}
+#tsp
+{
+margin-top: 40px;
+display: inline;
+color: green;
+}
+#spd, #speed
+{
+display: inline;
+color: green;
+}
+#contall
+{
+margin-top: -5px;
+margin-left: 8px;
+font-size: 46px;
+color: green;
+}
+#contcircle
+{
+position: absolute;
+border: 2px solid green;
+width: 40px;
+height: 40px;
+margin-left: 62%;
+margin-top: -240px;
+border-top-left-radius: 3em;
+border-top-right-radius: 3em;
+border-bottom-left-radius: 3em;
+border-bottom-right-radius: 3em;
+}
+</style>
+</head>
+<body>
+<div id="control">
+
+<span id="countdown1"></span>
+<span id="demo1"></span>
+</div>
+
+<canvas align="center" id="bitmap" width="650" height="450"></canvas>
+<img id="scream" src="tree4.png" alt="The Scream" height="0" width="0">
+<script>
+var ax = 0;
+var ay = 0;
+var ax1 = 0;
+var ay1 = 0;
+var ayv1 = 0;
+var axv1 = 0;
+var lt = 430;
+var sp = 0;
+var startdown = 0;
+var ef1 = 0;
+var ef2 = 0;
+var ef3 = 0;
+var ef4 = 0;
+var ef5 = 0;
+var ef6 = 0;
+var ef7 = 0;
+var ef8 = 0;
+var countall = 0;
+var tspeed = 3000;
+var canvas = document.getElementById('bitmap');
+var context = canvas.getContext('2d');
+context.fillStyle = "rgb(255,255,255)";  
+  context.fillRect(0,0,450, 600);
+
+  //ctx.setDelay(1000);
+  canvas.addEventListener("click", function(event, canvas) {
+var pos = relativePos(event, context.canvas);
+//alert('value of x=' + pos.x);
+//alert(pos.x + ',' + pos.y);
+//point(event, canvas);
+});
+ var seconds1 = .001;
+ var am = 0;
+  var a = 10;
+  var c = 1;
+var startanim = 0;
+ function anim(a)
+{
+//alert(c);
+var x1 = c * 10;
+var ctx = context;
+ctx.beginPath();
+ctx.save();
+
+diraction(0);
+if(startanim == 1)
+{
+if(startdown == 0)
+{
+ax1 = ax1 + (3 * ax)/(50-ay);
+ay1 = ay1 + 3;
+}
+else
+{
+ax1 = ax1 + (3 * ax)/(50-ay);
+ay1 = ay1 - 3;
+}
+}
+axv = axv1;   //(5 * ax)/(450-ay);
+ayv = ayv1;
+context.fillStyle = "rgb(255,255,255)";  
+  context.fillRect(0,0, 450, 650);
+  var img = document.getElementById("scream");
+	context.drawImage(img, 0, 0);
+  //alert(ax + ',' + ay);
+//meetpoint(140, 60);
+
+  // by calculating 230-40 = 190, 30 + 50 = 80
+  meetpoint(15, 40);
+  meetpoint(30, 52);
+  meetpoint(63, 2);
+  meetpoint(189,29);
+  //meetpoint(52, 47);
+  meetpoint(87, 11);
+  meetpoint(210, 70);
+  meetpoint(280, 60);
+  meetpoint(405, 20);
+  meetpoint(94, 21);
+  
+  /*alert(ctx.isPointInStroke(40, 35));
+  alert(ctx.isPointInPath(40, 35));*/
+  ctx.restore();
+   ctx.save(); 
+
+  ctx.restore();
+  if(startanim == 0)
+  {
+  ctx.fillStyle = "rgb(242,20,60)";
+  //aim fixing circle
+  //ctx.fillRect (axv, 240+ayv, 10, 10);
+  ctx.arc(axv, 400+ayv, 3, 0,Math.PI*2,false);
+  ctx.lineTo(0,450);
+ ctx.lineTo(axv-3,400+ayv);
+  ctx.fill();
+  }
+  ctx.stroke();
+  if(startanim == 1)
+  {
+  ctx.beginPath();
+  ctx.fillStyle = "rgb(120,120,60)";
+  ctx.arc(ax1, 450-ay1, 6, 0,Math.PI*2,false);
+  ctx.fill();
+  //ctx.fillRect (ax1, 450-ay1, 10, 10);
+  ctx.stroke();
+  }
+  /*shape mango */
+  
+    ctx.beginPath();
+	if(ef1 == 1)
+	{
+	if(30+am < 450)
+	{
+	am = am + 20;
+	ctx.moveTo(236,30+am);
+	ctx.bezierCurveTo(221,7+am,226,72+am,236,30+am);
+	soundfun();
+	}
+	else{
+	am = 0;
+	ef1 = 3;
+	}
+	soundfun();
+	}
+	else if(ef1 == 0)
+	{
+	ctx.moveTo(236,30);
+	ctx.bezierCurveTo(221,7,226,72,236,30);
+	}
+	
+	if(ef2 == 1)
+	{
+	if(45+am < 450)
+	{
+	am = am + 20;
+	ctx.moveTo(26,45+am);
+	ctx.bezierCurveTo(11,22+am,16,87+am,26,45+am);
+	}
+	else{
+	am = 0;
+	ef2 = 3;
+	}
+	}
+	else if(ef2 == 0)
+	{
+	ctx.moveTo(26,45);
+	ctx.bezierCurveTo(11,22,16,87,26,45);
+	}
+	
+	if(ef3 == 1)
+	{
+	if(48+am < 450)
+	{
+	am = am + 20;
+	ctx.moveTo(55,48+am);
+    ctx.bezierCurveTo(40,25+am,45,90+am,55,48+am);
+	}
+	else{
+	am = 0;
+	ef3 = 3;
+	}
+	}
+	else if(ef3 == 0)
+	{
+	ctx.moveTo(55,48);
+    ctx.bezierCurveTo(40,25,45,90,55,48);
+	}
+	
+	
+	if(ef4 == 1)
+	{
+	if(21+am < 450)
+	{
+	am = am + 20;
+	ctx.moveTo(136,21+am);
+    ctx.bezierCurveTo(121,-2+am,126,63+am,136,21+am);
+	}
+	else{
+	am = 0;
+	ef4 = 3;
+	}
+	}
+	else if(ef4 == 0)
+	{
+	ctx.moveTo(136,21);
+    ctx.bezierCurveTo(121,-2,126,63,136,21);
+	}
+	
+	if(ef5 == 1)
+	{
+	if(30+am < 450)
+	{
+	am = am + 20;
+	ctx.moveTo(494,30+am);
+    ctx.bezierCurveTo(479,7+am,484,72+am,494,30+am);
+	}
+	else{
+	am = 0;
+	ef5 = 3;
+	}
+	}
+	else if(ef5 == 0)
+	{
+	ctx.moveTo(494,30);
+    ctx.bezierCurveTo(479,7,484,72,494,30);
+	}
+	
+	if(ef6 == 1)
+	{
+	if(18+am < 450)
+	{
+	am = am + 20;
+	ctx.moveTo(399,18+am);
+    ctx.bezierCurveTo(384,-5+am,389,60+am,399,18+am);
+	}
+	else{
+	am = 0;
+	ef6 = 3;
+	}
+	}
+	else if(ef6 == 0)
+	{
+	ctx.moveTo(399,18);
+    ctx.bezierCurveTo(384,-5,389,60,399,18);
+	}
+		if(ef7 == 1)
+	{
+	if(69+am < 450)
+	{
+	am = am + 20;
+	ctx.moveTo(571,21+am);
+    ctx.bezierCurveTo(556,-5+am,561,60+am,571.5,21+am);
+	}
+	else{
+	am = 0;
+	ef7 = 3;
+	}
+	}
+	else if(ef7 == 0)
+	{
+	ctx.moveTo(571,69);
+    ctx.bezierCurveTo(556,-1,551,64,568,69);
+	}
+	
+	if(ef8 == 1)
+	{
+	if(87+am < 450)
+	{
+	am = am + 20;
+	ctx.moveTo(263,87+am);
+    ctx.bezierCurveTo(248,30+am,253,95+am,263,87+am);
+	}
+	else{
+	am = 0;
+	ef8 = 3;
+	}
+	}
+	else if(ef8 == 0)
+	{
+	ctx.moveTo(263,87);
+    ctx.bezierCurveTo(248,30,253,95,263,87);
+	}
+	//control count of element
+	if(startdown == 0)
+	{
+	if(ef1 == 3)
+	{
+	countall = countall + 1;
+	ef1 = 4;
+	}
+		if(ef2 == 3)
+	{
+	countall = countall + 1;
+	ef2 = 4;
+	}
+		if(ef3 == 3)
+	{
+	countall = countall + 1;
+	ef3 = 4;
+	}
+		if(ef4 == 3)
+	{
+	countall = countall + 1;
+	ef4 = 4;
+	}
+		if(ef5 == 3)
+	{
+	countall = countall + 1;
+	ef5 = 4;
+	}
+		if(ef6 == 3)
+	{
+	countall = countall + 1;
+	ef6 = 4;
+	}
+		if(ef7 == 3)
+	{
+	countall = countall + 1;
+	ef7 = 4;
+	}
+		if(ef8 == 3)
+	{
+	countall = countall + 1;
+	ef8 = 4;
+	}
+	document.getElementById("contall").innerHTML = countall;
+	if(countall > 5)
+	{
+	document.getElementById("nextlabel").style.display = 'block';
+	}
+	
+	}
+	
+
+	ctx.fillStyle = "#FFD400";
+    ctx.fill();
+	ctx.lineWidth = -1;
+	//setStrokeColor(57, 245, 6, 0);
+	 ctx.strokeStyle = 'rgba(0,0,255,0)';
+	 
+seconds1 = .01;
+secondPassed1();
+document.getElementById("totalspeed").innerHTML = tspeed;
+}
+function meetpoint(pointx, pointy)
+{
+//var len = 160+a;
+  //var br = 160-a;
+  var len = ax1;
+  var br = 450-ay1;
+ 
+  if(len >= pointx && br >= pointy && br-3 < pointy && len < pointx+3)// && len < pointx+(3 * ax)/(50-ay))// && pointy-11 > br && len < pointx-11)
+  {
+  //alert('piont in area');
+  var pos = relativePos(event, canvas);
+//alert(pos.x + ',' + pos.y);
+  }
+  if(len >= 236.25 && br >= 30 && br-3 < 30 && len < 236.3 && ef1 !== 4)
+  {
+  ef1 = 1;
+    	var audio = new Audio('sound.mp3');
+audio.play();
+  //alert('hello');
+  }
+  if(len > 236.25 && len < 236.3 && br == 30 && ef1 !== 4)
+  {
+  ef1 = 1;
+    	var audio = new Audio('sound.mp3');
+audio.play();
+  //alert('hello');
+  }
+  if(len > 25.85 && len < 25.86 && br == 45 && ef2 !== 4)
+  {
+  ef2 = 1;
+    	var audio = new Audio('sound.mp3');
+audio.play();
+  //alert('eff2');
+  }
+   if(len > 54.40 && len < 54.41 && br == 51 && ef3 !== 4)
+  {
+  ef3 = 1;
+    	var audio = new Audio('sound.mp3');
+audio.play();
+  //alert('eff3');
+  }
+   if(len > 135.47 && len < 135.48 && br == 21 && ef4 !== 4)
+  {
+  ef4 = 1;
+    	var audio = new Audio('sound.mp3');
+audio.play();
+  //alert('eff4');
+  }
+    if(len > 493 && len < 493.1 && br == 30 && ef5 !== 4)
+  {
+  ef5 = 1;
+  var audio = new Audio('sound.mp3');
+audio.play();
+  //alert('eff5');
+  }
+   if(len == 398.7692307692312 && br == 18 && ef6 !== 4)
+  {
+  ef6 = 1;
+  var audio = new Audio('sound.mp3');
+audio.play();
+  //alert('eff6');
+  }
+    if(len == 571.5 && br == 69 && ef7 !== 4)
+  {
+  ef7 = 1;
+  var audio = new Audio('sound.mp3');
+audio.play();
+  //alert('eff6');
+  }
+      if(len == 262.86206896551766 && br == 87 && ef8 !== 4)
+  {
+  ef8 = 1;
+  var audio = new Audio('sound.mp3');
+audio.play();
+  //alert('eff6');
+  }
+}
+function diraction(k)
+{
+if(k == 1)
+{
+ax = ax + 3;
+ay = ay + 3;
+ayv1 = ayv1 + 3;
+axv1 = axv1 + 3;
+document.getElementById("angle").innerHTML = ax;
+}
+if(k == 2)
+{
+ay = ay - 3;
+ax = ax - 3;
+ayv1 = ayv1 - 3;
+axv1 = axv1 - 3;
+document.getElementById("angle").innerHTML = ax;
+}
+if(1 > (tspeed - sp))
+	{
+document.getElementById("totalspeed").style.color = "red";
+}
+}
+function animstart()
+{
+	if(1 > (tspeed - sp))
+	{
+	startanim = 0;
+	document.getElementById("tryagain").style.display = 'block';
+	document.getElementById("totalspeed").style.color = "red";
+	}
+	else
+	{
+	startanim = 1;
+	document.getElementById("allcont").style.display = 'none';
+	}
+		tspeed = tspeed - sp;
+	document.getElementById("totalspeed").innerHTML = tspeed;
+	var audio = new Audio('s2.mp3');
+audio.play();
+}
+function speed()
+{
+lt = lt - 10;
+sp = sp + 10;
+if(1 > (tspeed - sp))
+	{
+document.getElementById("totalspeed").style.color = "red";
+}
+document.getElementById("speed").innerHTML = sp;
+}
+function speedminus()
+{
+lt = lt + 10;
+sp = sp - 10;
+//alert(countall);
+if(1 > (tspeed - sp))
+	{
+document.getElementById("totalspeed").style.color = "red";
+}
+else
+{
+document.getElementById("totalspeed").style.color = "green";
+}
+document.getElementById("speed").innerHTML = sp;
+}
+
+function relativePos(event, element)
+{
+var rect = element.getBoundingClientRect();
+return {
+x: Math.floor(event.clientX - rect.left),
+y: Math.floor(event.clientY - rect.top)};
+}
+function point(event, canvas)
+{
+//alert('from point');
+var pos = relativePos(event, canvas);
+//alert(pos.x + ',' + pos.y);
+}
+
+  //anim();
+  function secondPassed1() {
+    var minutes = Math.round((seconds1 - 30)/60);
+    var remainingSeconds = seconds1 % 60;
+    if (remainingSeconds < 10) {
+        remainingSeconds = "0" + remainingSeconds;  
+    }
+    document.getElementById('countdown1').innerHTML = minutes + ":" + remainingSeconds;
+	/*if(seconds1 > 0 && seconds1 <2)
+	{
+	
+alert(c);
+anim(a);
+	}*/
+    if (seconds1 <= 0) {
+a = a + 10;
+c = c + 1;
+if(c > 2)
+{
+c = 1;
+}
+if(a > 160)
+{
+a = 10;
+}
+if((450-ay1) < lt)
+{
+startdown = 1;
+}
+if((450-ay1) > 450 || ax1 > 600 || ay1 > 450)
+{
+//lt = 430;
+startdown = 0;
+ax1 = 0;
+ay1 = 0;
+startanim = 0;
+document.getElementById("allcont").style.display = 'block';
+}
+  anim(a);
+	
+} else {
+
+    seconds1--;   
+    }
+}
+var countdownTimer1 = setInterval('secondPassed1()', 100);
+function soundfun()
+{
+document.getElementById("totalspeed").innerHTML = tspeed;
+}
+soundfun();
+</script>
+ <div id="nextlabel"><div id="next">You Win.<a href="animuppercentfinal1lavel2.html">NEXT</a></div></div>
+ <div id="tryagain"><div id="next">You Lose.<a href="animuppercentfinal1.html">Try Again</a></div></div>
+   <div id="contcircle">
+  <p id="contall"></p>
+  </div>
+  <p id="sound"></p>
+  <div id="allcont">
+  <p id="tsp">Tolta Speed:</p><span id="totalspeed"></span>
+<p id="ang">Angle :</p><span id="angle"></span>
+  <p id="spd">Speed :</p><span id="speed"></span>
+  <div id="dcont">
+<p id="t2" onclick="speed()" >&#9650;</p>
+<h1 id="t4" onclick="diraction(2)">&#9668;</h1><h1 id="t1" onclick="animstart()">&#9632;</h1><h1 id="t3" onclick="diraction(1)">&#9654;</h1>
+<p id="t5" onclick="speedminus()">&#9660;</p>
+</div>
+</div>
+  </body>
+  </html>
